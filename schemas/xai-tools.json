@@ -1,0 +1,71 @@
+{
+  "description": "xAI Grok API function calling용 도구 정의. Grok이 지도안 JSON을 작성한 뒤 이 정의대로 호출하면 됩니다. 실행은 로컬 lessonplan-hwpx-mcp(또는 dist/lib.js)가 담당.",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "lessonplan_scaffold",
+        "description": "주제·학교급·확정 성취기준으로 지도안 작성 골격+생성 브리프 생성. 성취기준 code/text는 신뢰 가능한 소스(cu2022-mcp 등)만.",
+        "parameters": {
+          "type": "object",
+          "required": ["topic", "schoolLevel", "subject"],
+          "properties": {
+            "topic": { "type": "string", "minLength": 2, "maxLength": 200 },
+            "schoolLevel": { "enum": ["elementary", "middle", "high"] },
+            "subject": { "type": "string" },
+            "gradeBandId": { "type": "string", "description": "elem-1-2|elem-3-4|elem-5-6|mid-1|mid-2|mid-3|high-1|high-2-3" },
+            "mode": { "enum": ["general", "question-driven"] },
+            "objective": { "type": "string" },
+            "classContext": { "type": "string" },
+            "standards": {
+              "type": "array",
+              "maxItems": 5,
+              "items": {
+                "type": "object",
+                "required": ["code", "text"],
+                "properties": {
+                  "code": { "type": "string" },
+                  "text": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "lessonplan_validate",
+        "description": "지도안 JSON 형식·필수 단계·cite-only 검증",
+        "parameters": {
+          "type": "object",
+          "required": ["plan"],
+          "properties": {
+            "plan": { "$ref": "https://github.com/reallygood83/lessonplan-hwpx-mcp/schemas/plan.schema.json" },
+            "mode": { "enum": ["general", "question-driven"] }
+          }
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "lessonplan_render_hwpx",
+        "description": "검증 통과한 지도안 JSON을 .hwpx 파일로 저장하고 경로를 반환",
+        "parameters": {
+          "type": "object",
+          "required": ["plan", "topic"],
+          "properties": {
+            "plan": { "$ref": "https://github.com/reallygood83/lessonplan-hwpx-mcp/schemas/plan.schema.json" },
+            "topic": { "type": "string" },
+            "mode": { "enum": ["general", "question-driven"] },
+            "objective": { "type": "string" },
+            "outputDir": { "type": "string" },
+            "fileName": { "type": "string" }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "name": "lessonplan-hwpx-mcp",
+  "version": "0.1.0",
+  "description": "지도안 HWPX 커넥터 (lessonplan-hwpx-mcp) — 2022 개정 성취기준 정합 수업 지도안을 한컴 .hwpx로 생성·저장하는 MCP 서버",
+  "type": "module",
+  "bin": {
+    "lessonplan-hwpx-mcp": "./dist/index.js",
+    "lessonplan-hwpx": "./scripts/render-cli.mjs"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./lib": "./dist/lib.js"
+  },
+  "files": [
+    "dist",
+    "scripts",
+    "schemas",
+    "qa",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/chmod-bin.mjs",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "qa:smoke": "node scripts/mcp-qa-smoke.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "lessonplan-hwpx-mcp",
+    "지도안",
+    "hwpx",
+    "hwp",
+    "kordoc",
+    "cu2022",
+    "성취기준",
+    "교육과정",
+    "teachers"
+  ],
+  "author": "reallygood83",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "jszip": "^3.10.1",
+    "kordoc": "^4.14.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reallygood83/lessonplan-hwpx-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/reallygood83/lessonplan-hwpx-mcp/issues"
+  },
+  "homepage": "https://github.com/reallygood83/lessonplan-hwpx-mcp#readme"
+}

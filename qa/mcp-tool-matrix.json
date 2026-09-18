@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-09-18T13:56:48.717Z",
+  "version": "0.1.0",
+  "scorePct": 100,
+  "pass": true,
+  "passed": 13,
+  "total": 13,
+  "checks": [
+    {
+      "name": "tool_count_3",
+      "pass": true,
+      "detail": "lessonplan_scaffold,lessonplan_validate,lessonplan_render_hwpx"
+    },
+    {
+      "name": "scaffold_general_shape",
+      "pass": true,
+      "detail": "brief+shape"
+    },
+    {
+      "name": "scaffold_standards_embedded",
+      "pass": true,
+      "detail": "cite-only block"
+    },
+    {
+      "name": "scaffold_question_brief",
+      "pass": true,
+      "detail": "question-driven default"
+    },
+    {
+      "name": "validate_accepts_demo",
+      "pass": true,
+      "detail": "0 issues"
+    },
+    {
+      "name": "validate_flags_missing_driving_question",
+      "pass": true,
+      "detail": "drivingQuestion"
+    },
+    {
+      "name": "validate_blocks_fake_standard",
+      "pass": true,
+      "detail": "6수01-99 blocked"
+    },
+    {
+      "name": "render_writes_file",
+      "pass": true,
+      "detail": "한-기관에-모든-힘을-주지-않는-이유-삼권분립의-지혜-탐구하기.hwpx 6522B"
+    },
+    {
+      "name": "render_zip_structure",
+      "pass": true,
+      "detail": "9 entries"
+    },
+    {
+      "name": "render_section_content",
+      "pass": true,
+      "detail": "3 tables"
+    },
+    {
+      "name": "borderfill_integrity",
+      "pass": true,
+      "detail": "4 fills"
+    },
+    {
+      "name": "render_rejects_invalid",
+      "pass": true,
+      "detail": "missing 정리 blocked"
+    },
+    {
+      "name": "cli_demo_render",
+      "pass": true,
+      "detail": "/var/folders/y8/hc4m802x6c1_pd0mwvvr4n580000gn/T/lessonplan-hwpx-qa-umqn3B/한-기관에-모든-힘을-주지-않는-이유-삼권분립의-지혜-탐구하기.hwpx"
+    }
+  ],
+  "tools": [
+    "lessonplan_scaffold",
+    "lessonplan_validate",
+    "lessonplan_render_hwpx"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/reallygood83/lessonplan-hwpx-mcp/schemas/plan.schema.json",
+  "title": "LessonPlanLlmOutput",
+  "description": "지도안 JSON 계약 — lessonplan_scaffold의 jsonShape과 동일. 도입·전개·정리 3단계 필수.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "stages", "assessment", "teacherNotes"],
+  "properties": {
+    "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "questionizedObjectives": {
+      "type": "array",
+      "maxItems": 5,
+      "items": { "type": "string", "minLength": 1, "maxLength": 200 }
+    },
+    "drivingQuestion": { "type": "string", "minLength": 1, "maxLength": 300 },
+    "inquiryQuestions": {
+      "type": "array",
+      "maxItems": 6,
+      "items": { "type": "string", "minLength": 1, "maxLength": 200 }
+    },
+    "stages": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["stage", "minutes", "activities"],
+        "properties": {
+          "stage": { "enum": ["도입", "전개", "정리"] },
+          "minutes": { "type": "integer", "minimum": 1, "maximum": 60 },
+          "leadQuestion": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "activities": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["name", "teacher", "student"],
+              "properties": {
+                "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+                "teacher": { "type": "string", "minLength": 1, "maxLength": 500 },
+                "student": { "type": "string", "minLength": 1, "maxLength": 500 },
+                "note": { "type": "string", "maxLength": 300 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "assessment": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["criteria", "method"],
+        "properties": {
+          "criteria": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "method": { "type": "string", "minLength": 1, "maxLength": 80 }
+        }
+      }
+    },
+    "teacherNotes": {
+      "type": "array",
+      "maxItems": 8,
+      "items": { "type": "string", "minLength": 1, "maxLength": 300 }
+    },
+    "standards": {
+      "type": "array",
+      "maxItems": 5,
+      "description": "확정 성취기준 코드만 (cite-only). 없으면 빈 배열.",
+      "items": { "type": "string", "maxLength": 32 }
+    }
+  }
+}
