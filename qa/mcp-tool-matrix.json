@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T13:56:48.717Z",
+  "generatedAt": "2026-09-18T15:05:02.251Z",
   "version": "0.1.0",
   "scorePct": 100,
   "pass": true,
@@ -44,7 +44,7 @@
     {
       "name": "render_writes_file",
       "pass": true,
-      "detail": "한-기관에-모든-힘을-주지-않는-이유-삼권분립의-지혜-탐구하기.hwpx 6522B"
+      "detail": "한-기관에-모든-힘을-주지-않는-이유-삼권분립의-지혜-탐구하기.hwpx 6463B"
     },
     {
       "name": "render_zip_structure",
@@ -69,7 +69,7 @@
     {
       "name": "cli_demo_render",
       "pass": true,
-      "detail": "/var/folders/y8/hc4m802x6c1_pd0mwvvr4n580000gn/T/lessonplan-hwpx-qa-umqn3B/한-기관에-모든-힘을-주지-않는-이유-삼권분립의-지혜-탐구하기.hwpx"
+      "detail": "/var/folders/y8/hc4m802x6c1_pd0mwvvr4n580000gn/T/lessonplan-hwpx-qa-LIg58X/한-기관에-모든-힘을-주지-않는-이유-삼권분립의-지혜-탐구하기.hwpx"
     }
   ],
   "tools": [

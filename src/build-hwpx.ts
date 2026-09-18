@@ -264,7 +264,6 @@ function buildSectionFromModel(doc: LessonPlanDocumentModel): string {
   }
 
   parts.push(p(" "));
-  parts.push(p("마이클S · 지도안 표 미리보기와 동일한 내용으로 저장"));
 
   return (
     `<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>\n` +

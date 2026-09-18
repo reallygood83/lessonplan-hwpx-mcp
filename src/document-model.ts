@@ -82,7 +82,7 @@ export function buildLessonPlanDocumentModel(
   return {
     title: plan.title?.trim() || "수업 지도안",
     modeLabel,
-    subtitle: `마이클S · ${modeLabel} 지도안`,
+    subtitle: `${modeLabel} 지도안`,
     grade: formatGradeLabel(plan),
     subject: plan.curriculum?.subject?.trim() || "—",
     topic: plan.topic?.trim() || "—",

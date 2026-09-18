@@ -138,7 +138,10 @@ const phrases = [
 const tblCount = (section.match(/<hp:tbl /g) || []).length;
 pass(
   "render_section_content",
-  phrases.every((ph) => section.includes(ph)) && !section.includes("<br") && tblCount >= 3,
+  phrases.every((ph) => section.includes(ph)) &&
+    !section.includes("<br") &&
+    !section.includes("마이클S") &&
+    tblCount >= 3,
   tblCount + " tables",
 );
 

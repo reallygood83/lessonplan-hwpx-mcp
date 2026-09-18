@@ -2,7 +2,7 @@
 
 **2022 개정 성취기준에 정합한 수업 지도안을 한컴 `.hwpx` 파일로 저장하는 MCP 서버**
 
-> cu2022-mcp(성취기준 cite-only 검색)의 결과를 받아, studyfold(마이클S) 실전 검증된 제출용 표 서식 그대로 지도안 문서를 만듭니다.
+> cu2022-mcp(성취기준 cite-only 검색)의 결과를 받아, studyfold에서 실전 검증된 제출용 표 서식 그대로 지도안 문서를 만듭니다.
 > 서버 자체는 LLM을 호출하지 않습니다 — Claude·Grok·Codex 어떤 모델이든 브리프대로 JSON만 채우면 됩니다.
 
 [![MCP](https://img.shields.io/badge/MCP-stdio-blue)](https://modelcontextprotocol.io)
